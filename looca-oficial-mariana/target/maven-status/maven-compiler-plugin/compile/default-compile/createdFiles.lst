@@ -1,0 +1,11 @@
+dao\DadosComponenteDao.class
+modelo\Maquina.class
+modelo\DadosComponente.class
+conexao\Conexao.class
+modelo\Funcionario.class
+servico\Desktop.class
+teste\Teste.class
+dao\FuncionarioDao.class
+dao\MaquinaDao.class
+modelo\MaquinaTipoComponente.class
+dao\MaquinaTipoComponenteDao.class
