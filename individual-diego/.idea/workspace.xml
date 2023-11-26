@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6188841c-456b-438e-a97e-61ae48c702e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/conexao/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexao/Conexao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DadosComponentesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DadosComponentesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaquinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaquinaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaquinaTipoComponenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaquinaTipoComponenteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ValidacaoEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ValidacaoEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ValidacaoIdMaquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ValidacaoIdMaquina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/conexao/Conexao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/conexao/ConexaoAws.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/conexao/ConexaoSlack.class" beforeDir="false" />

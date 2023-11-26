@@ -12,8 +12,8 @@ public class ValidacaoEmail extends ValidacaoParametro {
     Conexao conexao = new Conexao();
     JdbcTemplate con = conexao.getConexaoDoBanco();
 
-    ConexaoAws conexaoAws = new ConexaoAws();
-    JdbcTemplate conAws = conexaoAws.getConexaoDoBanco();
+    ConexaoAws conexaoAWS = new ConexaoAws();
+    JdbcTemplate conAWS = conexaoAWS.getConexaoDoBanco();
 
     public ValidacaoEmail() {
     }
@@ -23,7 +23,7 @@ public class ValidacaoEmail extends ValidacaoParametro {
         List<String> emailsExistentes;
 
         try {
-            emailsExistentes = conAws.queryForList("SELECT email FROM usuario", String.class);
+            emailsExistentes = conAWS.queryForList("SELECT email FROM usuario", String.class);
         for(int i = 0; i < emailsExistentes.size(); i++){
             if(emailsExistentes.get(i).equals(parametro)){
                 return true;

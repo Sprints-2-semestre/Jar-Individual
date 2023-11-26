@@ -6,6 +6,7 @@ import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
 import com.github.britooo.looca.api.group.rede.Rede;
 import conexao.Conexao;
+import conexao.ConexaoAws;
 import conexao.ConexaoSlack;
 import modelo.DadosComponentes;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -23,7 +24,7 @@ public class DadosComponentesDao {
     Conexao conexao = new Conexao();
     JdbcTemplate con = conexao.getConexaoDoBanco();
 
-    Conexao conexaoAWS = new Conexao();
+    ConexaoAws conexaoAWS = new ConexaoAws();
     JdbcTemplate conAWS = conexaoAWS.getConexaoDoBanco();
     // fkMaquina
     String fkMaquina = looca.getProcessador().getId();

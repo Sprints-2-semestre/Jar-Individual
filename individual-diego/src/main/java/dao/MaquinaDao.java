@@ -37,8 +37,8 @@ public class MaquinaDao {
     Conexao conexao = new Conexao();
     JdbcTemplate con = conexao.getConexaoDoBanco();
     // conexão aws
-    ConexaoAws conexaoAws = new ConexaoAws();
-    JdbcTemplate conAws = conexaoAws.getConexaoDoBanco();
+    ConexaoAws conexaoAWS = new ConexaoAws();
+    JdbcTemplate conAWS = conexaoAWS.getConexaoDoBanco();
     private String idMaquina = looca.getProcessador().getId();
     private String hostName = looca.getRede().getParametros().getHostName();
     private String sistemaOperacional = looca.getSistema().getSistemaOperacional();
@@ -380,19 +380,19 @@ public class MaquinaDao {
 
                 Integer atualDisco = Math.toIntExact(tamanhoTotalDisco - tamanhoDisponivel);
 
-                conAws.update("INSERT INTO dadosComponente (qtdUsoCpu, fkMaquina, fkTipoComponente) VALUES (?, ?, ?);", usoCpu, idMaquina, 1);
+                conAWS.update("INSERT INTO dadosComponente (qtdUsoCpu, fkMaquina, fkTipoComponente) VALUES (?, ?, ?);", usoCpu, idMaquina, 1);
 
-                conAws.update("INSERT INTO dadosComponente (memoriaEmUso, memoriaDisponivel, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", s, sb, idMaquina, 2);
+                conAWS.update("INSERT INTO dadosComponente (memoriaEmUso, memoriaDisponivel, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", s, sb, idMaquina, 2);
 
-                conAws.update("INSERT INTO dadosComponente (usoAtualDisco, usoDisponivelDisco, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", (tamanhoTotalDisco - tamanhoDisponivel), tamanhoDisponivel, idMaquina, 3);
+                conAWS.update("INSERT INTO dadosComponente (usoAtualDisco, usoDisponivelDisco, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", (tamanhoTotalDisco - tamanhoDisponivel), tamanhoDisponivel, idMaquina, 3);
 
                 // Conexão Slack
 
                 EnviarSlack slack = new EnviarSlack();
 
-                Double parametroMaximoCpu = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoCpu = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioCpu = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioCpu = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
                 if(usoCpu >= parametroMedioCpu && usoCpu < parametroMaximoCpu){
                     slack.enviarMensagemCpuMedio(hostName, usoCpu);
@@ -402,9 +402,9 @@ public class MaquinaDao {
                     slack.enviarMensagemCpuMaximo(hostName, usoCpu);
                 }
 
-                Double parametroMaximoram = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoram = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioRam = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioRam = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
                 if(divisaoUsoRam >= parametroMedioRam && divisaoUsoRam < parametroMaximoram){
                     slack.enviarMensagemRamMedio(hostName, divisaoUsoRam);
@@ -414,9 +414,9 @@ public class MaquinaDao {
                     slack.enviarMensagemRamMaximo(hostName, divisaoUsoRam);
                 }
 
-                Double parametroMaximoDisco = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoDisco = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioDisco = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioDisco = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
 
                 if(atualDisco >= parametroMedioDisco && atualDisco < parametroMaximoDisco){
@@ -427,7 +427,7 @@ public class MaquinaDao {
                     slack.enviarMensagemDiscoMaximo(hostName, atualDisco);
                 }
 
-                // Fim conAwsexão slack
+                // Fim conAWSexão slack
 
                 Path path = Paths.get("C:/Users/Public/logs");
                 Path path1 = Paths.get("C:/Users/Public/logs/" + LocalDate.now());
@@ -473,7 +473,7 @@ public class MaquinaDao {
 
             }
             else{
-                conAws.update("INSERT INTO maquina (idMaquina, hostName, sistemaOperacional, arquitetura, fabricante, tempoAtividade) VALUES (?, ?, ?, ?, ?, ?);",
+                conAWS.update("INSERT INTO maquina (idMaquina, hostName, sistemaOperacional, arquitetura, fabricante, tempoAtividade) VALUES (?, ?, ?, ?, ?, ?);",
                         idMaquina, hostName, sistemaOperacional, arquitetura,
                         fabricante, tempoAtividade);
                 maquinaTipoComponenteDao.salvar();
@@ -500,19 +500,19 @@ public class MaquinaDao {
 
                 Integer atualDisco = Math.toIntExact(tamanhoTotalDisco - tamanhoDisponivel);
 
-                conAws.update("INSERT INTO dadosComponente (qtdUsoCpu, fkMaquina, fkTipoComponente) VALUES (?, ?, ?);", usoCpu, idMaquina, 1);
+                conAWS.update("INSERT INTO dadosComponente (qtdUsoCpu, fkMaquina, fkTipoComponente) VALUES (?, ?, ?);", usoCpu, idMaquina, 1);
 
-                conAws.update("INSERT INTO dadosComponente (memoriaEmUso, memoriaDisponivel, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", s, sb, idMaquina, 2);
+                conAWS.update("INSERT INTO dadosComponente (memoriaEmUso, memoriaDisponivel, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", s, sb, idMaquina, 2);
 
-                conAws.update("INSERT INTO dadosComponente (usoAtualDisco, usoDisponivelDisco, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", (tamanhoTotalDisco - tamanhoDisponivel), tamanhoDisponivel, idMaquina, 3);
+                conAWS.update("INSERT INTO dadosComponente (usoAtualDisco, usoDisponivelDisco, fkMaquina, fkTipoComponente) VALUES (?, ?, ?, ?);", (tamanhoTotalDisco - tamanhoDisponivel), tamanhoDisponivel, idMaquina, 3);
 
                 // Conexão Slack
 
                 EnviarSlack slack = new EnviarSlack();
 
-                Double parametroMaximoCpu = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoCpu = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioCpu = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioCpu = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 1 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
                 if(usoCpu >= parametroMedioCpu && usoCpu < parametroMaximoCpu){
                     slack.enviarMensagemCpuMedio(hostName, usoCpu);
@@ -522,9 +522,9 @@ public class MaquinaDao {
                     slack.enviarMensagemCpuMaximo(hostName, usoCpu);
                 }
 
-                Double parametroMaximoram = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoram = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioRam = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioRam = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 2 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
                 if(divisaoUsoRam >= parametroMedioRam && divisaoUsoRam < parametroMaximoram){
                     slack.enviarMensagemRamMedio(hostName, divisaoUsoRam);
@@ -534,9 +534,9 @@ public class MaquinaDao {
                     slack.enviarMensagemRamMaximo(hostName, divisaoUsoRam);
                 }
 
-                Double parametroMaximoDisco = conAws.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMaximoDisco = conAWS.queryForObject("SELECT maximo FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
-                Double parametroMedioDisco = conAws.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
+                Double parametroMedioDisco = conAWS.queryForObject("SELECT medio FROM parametro where fkTipoComponente = 3 ORDER BY maximo DESC LIMIT 1;", Double.class);
 
 
 
@@ -547,7 +547,7 @@ public class MaquinaDao {
                 if(atualDisco >= parametroMaximoDisco){
                     slack.enviarMensagemDiscoMaximo(hostName, atualDisco);
                 }
-                // Fim conAwsexão slackAws
+                // Fim conAWSexão slackAws
 
                 Path path = Paths.get("C:/Users/Public/logs");
                 Path path1 = Paths.get("C:/Users/Public/logs/" + LocalDate.now());

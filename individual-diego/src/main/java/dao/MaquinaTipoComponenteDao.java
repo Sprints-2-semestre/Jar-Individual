@@ -4,6 +4,7 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.processos.Processo;
 import com.github.britooo.looca.api.group.rede.RedeInterface;
 import conexao.Conexao;
+import conexao.ConexaoAws;
 import conexao.ConexaoSlack;
 import modelo.EnviarSlack;
 import modelo.MaquinaTipoComponente;
@@ -29,7 +30,7 @@ public class MaquinaTipoComponenteDao {
     Conexao conexao = new Conexao();
     JdbcTemplate con = conexao.getConexaoDoBanco();
 
-    Conexao conexaoAWS = new Conexao();
+    ConexaoAws conexaoAWS = new ConexaoAws();
     JdbcTemplate conAWS = conexaoAWS.getConexaoDoBanco();
 
     ValidacaoIdMaquina validacaoIdMaquina = new ValidacaoIdMaquina();
