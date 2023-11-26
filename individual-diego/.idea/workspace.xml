@@ -10,15 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6188841c-456b-438e-a97e-61ae48c702e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/looca_oficial_jar/looca-oficial.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/looca_oficial_jar/looca-oficial.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/conexao/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexao/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/conexao/ConexaoAws.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexao/ConexaoAws.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DadosComponentesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DadosComponentesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaquinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaquinaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MaquinaTipoComponenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MaquinaTipoComponenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ValidacaoIdMaquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ValidacaoIdMaquina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teste/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teste/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ValidacaoEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ValidacaoEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/conexao/Conexao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/conexao/ConexaoAws.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/conexao/ConexaoSlack.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/DadosComponentesDao.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/MaquinaDao.class" beforeDir="false" />
@@ -51,7 +47,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -67,10 +63,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/diego/OneDrive/Jar-do-Grupo/JAR-DO-GRUPO-OFICIAL/Jar-do-Grupo/looca-oficial",
+    "last_opened_file_path": "C:/faculdade/SO/chaves/Jar-Individual/individual-diego",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.11820328",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RunAnythingCache">

@@ -16,7 +16,7 @@ public class Conexao {
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/farmacos");
 
-        dataSource.setUsername("ContainerBdFarmacos");
+        dataSource.setUsername("farmacos");
 
         dataSource.setPassword("urubu100");
 

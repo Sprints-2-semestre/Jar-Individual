@@ -23,7 +23,7 @@ public class ValidacaoEmail extends ValidacaoParametro {
         List<String> emailsExistentes;
 
         try {
-            emailsExistentes = con.queryForList("SELECT email FROM usuario", String.class);
+            emailsExistentes = conAws.queryForList("SELECT email FROM usuario", String.class);
         for(int i = 0; i < emailsExistentes.size(); i++){
             if(emailsExistentes.get(i).equals(parametro)){
                 return true;
