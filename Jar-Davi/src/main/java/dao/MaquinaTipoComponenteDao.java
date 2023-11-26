@@ -253,7 +253,11 @@ public class MaquinaTipoComponenteDao {
                 }
             }
 
-
+            qtdRegistros = qtdRegistros + 1;
+            System.out.println("""
+                        %d° Registro""".formatted(qtdRegistros));
+            System.out.println("Capturando dados fixos dos componentes...");
+            System.out.println("Capturando dados volateis dos componentes...");
 
             Path path = Paths.get("/home/ubuntu/logs");
             Path path1 = Paths.get("/home/ubuntu/logs/" + LocalDate.now());
