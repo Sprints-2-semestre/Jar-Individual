@@ -9,12 +9,12 @@ public class ConexaoAws {
     public ConexaoAws() {
         BasicDataSource dataSource = new BasicDataSource();
 
+        dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-
-        dataSource.setUrl("jdbc:sqlserver://54.197.240.46:1433;database=MedGuard;trustServerCertificate=true");
-
+        dataSource.setUrl("jdbc:sqlserver://54.197.240.46.database.windows.net:1433;database=farmacos;"
+                + "user=sa;password=farmacos;encrypt=true;"
+                + "trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
         dataSource.setUsername("sa");
-
         dataSource.setPassword("farmacos");
         this.conexaoDoBanco = new JdbcTemplate(dataSource);
     }

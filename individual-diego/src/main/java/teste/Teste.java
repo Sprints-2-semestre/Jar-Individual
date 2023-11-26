@@ -82,9 +82,9 @@ public class Teste {
             timer.scheduleAtFixedRate(inserirBanco, 0, 4000);
         } else{
             System.out.println("Não foi encontrado seu email. Contrate o nosso serviço primeiro. Obrigado");
-            Path path = Paths.get("C:/Users/Public/logs");
-            Path path1 = Paths.get("C:/Users/Public/logs/" + LocalDate.now());
-            File log = new File("C:/Users/Public/logs/" + LocalDate.now() + "/" + LocalDate.now() + ".txt");
+            Path path = Paths.get("/home/ubuntu/logs");
+            Path path1 = Paths.get("/home/ubuntu/logs/" + LocalDate.now());
+            File log = new File("/home/ubuntu/logs/" + LocalDate.now() + "/" + LocalDate.now() + ".txt");
             LocalDateTime momentoAtual = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
