@@ -39,7 +39,7 @@ public class MaquinaDao {
     // conexão aws
     ConexaoAws conexaoAWS = new ConexaoAws();
     JdbcTemplate conAWS = conexaoAWS.getConexaoDoBanco();
-    private String idMaquina = looca.getProcessador().getId();
+    private String idMaquina = looca.getProcessador().getId() + "7";
     private String hostName = looca.getRede().getParametros().getHostName();
     private String sistemaOperacional = looca.getSistema().getSistemaOperacional();
     private Integer arquitetura = looca.getSistema().getArquitetura();
