@@ -81,7 +81,8 @@ public class Teste {
             TimerTask exibirInicializado = new TimerTask() {
                 @Override
                 public void run() {
-                    System.out.println("A captura foi iniciada há: " + sistema.getInicializado());
+                    Instant instantAtual = Instant.now();
+                    System.out.println("\nA captura foi iniciada há: " + sistema.getInicializado().compareTo(instantAtual) + "\nObrigado por escolher a Farmacos.");
                 }
             };
             timer.scheduleAtFixedRate(exibirInicializado, 0,30000);
