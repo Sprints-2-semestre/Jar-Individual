@@ -259,6 +259,7 @@ public class MaquinaTipoComponenteDao {
             System.out.println("Capturando dados fixos dos componentes...");
             System.out.println("Capturando dados volateis dos componentes...");
 
+
             Path path = Paths.get("/home/ubuntu/logs");
             Path path1 = Paths.get("/home/ubuntu/logs/" + LocalDate.now());
             File log = new File("/home/ubuntu/logs/" + LocalDate.now() + "/" + LocalDate.now() + ".txt");
