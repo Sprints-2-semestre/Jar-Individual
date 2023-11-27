@@ -79,22 +79,18 @@ public class Teste {
             timer.scheduleAtFixedRate(inserirBanco, 0, 4000);
 
             TimerTask exibirInicializado = new TimerTask() {
-                int segundos = 0;
+                int minutos = 0;
 
                 @Override
                 public void run() {
-                    if (segundos < 60) {
-                        System.out.println("\nA captura foi iniciada há: " + segundos + " segundos.\nObrigado por escolher a Farmacos.");
-                        segundos += 30; // Incremento de 30 segundos
-                    } else {
-                        int minutos = segundos / 60;
-                        int segundosRestantes = segundos % 60;
-                        System.out.println("\nA captura foi iniciada há: " + minutos + " minutos e " + segundosRestantes + " segundos.\nObrigado por escolher a Farmacos.");
-                        segundos = 0; // Reinicia o contador para os próximos 60 segundos
+                    if (minutos < 60) {
+                        System.out.println("\nA captura foi iniciada há: " + minutos + " minutos.\nObrigado por escolher a Farmacos.");
+                        minutos += 1; // Incremento de 1 minuto
                     }
                 }
             };
-            timer.scheduleAtFixedRate(exibirInicializado, 0, 30000);
+
+            timer.scheduleAtFixedRate(exibirInicializado, 0, 60000); // Executa a cada 1 minuto (60000 milissegundos)
 
         } else{
             System.out.println("Não foi encontrado seu email. Contrate o nosso serviço primeiro. Obrigado");
