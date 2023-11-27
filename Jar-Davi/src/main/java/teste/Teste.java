@@ -28,9 +28,14 @@ public class Teste {
 
         Scanner leitor = new Scanner(System.in);
 
+        System.out.println("  _   _   _   _   _   _   _   _   _  ");
+        System.out.println(" / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\ ");
+        System.out.println("( B | e | m | - | v | i | n | d | o )");
+        System.out.println(" \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ ");
+
         System.out.println("""
                 ------------------------------------------------
-                |           Seja Bem Vindo a Fármacos          |
+                |                   Fármacos                   |
                 ------------------------------------------------
                 | Digite o seu email para verificarmos se você |
                 | tem acesso ao nosso sistema                  |
