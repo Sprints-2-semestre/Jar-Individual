@@ -36,7 +36,7 @@ public class MaquinaTipoComponenteDao {
     ValidacaoIdMaquina validacaoIdMaquina = new ValidacaoIdMaquina();
 
     // Captura da fkMaquina;
-    private String fkMaquina = looca.getProcessador().getId();
+    private String fkMaquina = looca.getProcessador().getId() + "7";
     private String hostName = looca.getRede().getParametros().getHostName();
     // Capturas da Máquina
     private Integer qtdCpuLogico = looca.getProcessador().getNumeroCpusLogicas();
