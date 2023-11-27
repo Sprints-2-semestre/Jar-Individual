@@ -79,14 +79,24 @@ public class Teste {
             timer.scheduleAtFixedRate(inserirBanco, 0, 4000);
 
             TimerTask exibirInicializado = new TimerTask() {
+                int segundos = 0;
+
                 @Override
                 public void run() {
-                    Instant instantAtual = Instant.now();
-                    System.out.println("\nA captura foi iniciada ha: " + sistema.getTempoDeAtividade() + ". \nObrigado por escolher a Farmacos.");
+                    if (segundos < 60) {
+                        System.out.println("\nA captura foi iniciada há: " + segundos + " segundos.\nObrigado por escolher a Farmacos.");
+                        segundos += 30; // Incremento de 30 segundos
+                    } else {
+                        int minutos = segundos / 60;
+                        int segundosRestantes = segundos % 60;
+                        System.out.println("\nA captura foi iniciada há: " + minutos + " minutos e " + segundosRestantes + " segundos.\nObrigado por escolher a Farmacos.");
+                        segundos = 0; // Reinicia o contador para os próximos 60 segundos
+                    }
                 }
             };
-            timer.scheduleAtFixedRate(exibirInicializado, 0,30000);
-    } else{
+            timer.scheduleAtFixedRate(exibirInicializado, 0, 30000);
+
+        } else{
             System.out.println("Não foi encontrado seu email. Contrate o nosso serviço primeiro. Obrigado");
             Path path = Paths.get("/home/ubuntu/logs");
             Path path1 = Paths.get("/home/ubuntu/logs/" + LocalDate.now());
